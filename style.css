@@ -1,0 +1,31 @@
+body {
+    background-color: lightblue;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    color: navy;
+}
+
+button {
+    background-color: rgb(133, 218, 203);
+    color: white;
+    padding: 10px 20px;
+     border: none;
+  }
+
+.button-container {
+    display: flex;
+    gap: 20px;
+}
+
+.button-container img {
+    width: 80px;
+    height: 80px;
+    transition: transform 0.2s;
+}
+
+.button-container img:hover {
+    transform: scale(1.1);
+}
