@@ -17,10 +17,10 @@
 
     /* Shadows */
     --shadow-sm:
-        0 2px 8px rgba(15, 23, 42, 0.04);
+        0 2px 8px rgba(15, 23, 42, 0.08);
 
     --shadow-md:
-        0 8px 30px rgba(15, 23, 42, 0.08);
+        0 8px 30px rgba(15, 23, 42, 0.16);
 
     /* Layout */
     --radius: 16px;
@@ -381,7 +381,8 @@ footer {
 @media (max-width: 900px) {
 
     .grid-2,
-    .grid-3 {
+    .grid-3,
+    .grid-4 {
         grid-template-columns: 1fr;
     }
 
