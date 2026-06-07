@@ -1,31 +1,364 @@
+/* ==========================
+   MODERN MINIMALIST DESIGN
+   ========================== */
+
+:root {
+    /* Colors */
+    --bg: #f8fafc;
+    --surface: #ffffff;
+
+    --text: #0f172a;
+    --text-muted: #64748b;
+
+    --accent: #6366f1;
+    --accent-hover: #4f46e5;
+
+    --border: #e2e8f0;
+
+    /* Shadows */
+    --shadow-sm:
+        0 2px 8px rgba(15, 23, 42, 0.04);
+
+    --shadow-md:
+        0 8px 30px rgba(15, 23, 42, 0.08);
+
+    /* Layout */
+    --radius: 16px;
+    --container-width: 1200px;
+}
+
+/* ==========================
+   RESET
+   ========================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: linen;
-    font-family: Arial, sans-serif;
-    text-align: center;
+    background: var(--bg);
+    color: var(--text);
+
+    font-family:
+        Inter,
+        system-ui,
+        sans-serif;
+
+    line-height: 1.6;
+    min-height: 100vh;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================
+   TYPOGRAPHY
+   ========================== */
+
+h1,
+h2,
+h3,
+h4 {
+    line-height: 1.1;
+    letter-spacing: -0.03em;
 }
 
 h1 {
-    color: navy;
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 800;
 }
 
-button {
-    background-color: rgb(133, 218, 203);
-    color: white;
-    padding: 10px 20px;
-     border: none;
-  }
+h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+}
 
-.button-container {
+h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+p {
+    color: var(--text-muted);
+    max-width: 65ch;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ==========================
+   LAYOUT
+   ========================== */
+
+.container {
+    width: min(100% - 2rem, var(--container-width));
+    margin-inline: auto;
+}
+
+.section {
+    padding: 6rem 0;
+}
+
+.section-sm {
+    padding: 3rem 0;
+}
+
+/* ==========================
+   NAVBAR
+   ========================== */
+
+.navbar {
+    padding: 1.25rem 0;
+}
+
+.nav-container {
     display: flex;
-    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.button-container img {
-    width: 80px;
-    height: 80px;
-    transition: transform 0.2s;
+.logo {
+    font-weight: 700;
+    font-size: 1.2rem;
 }
 
-.button-container img:hover {
-    transform: scale(1.1);
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    transition: 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--text);
+}
+
+/* ==========================
+   HERO SECTION
+   ========================== */
+
+.hero {
+    min-height: 80vh;
+
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    max-width: 650px;
+}
+
+/* ==========================
+   BUTTONS
+   ========================== */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.9rem 1.5rem;
+
+    border-radius: 12px;
+    border: none;
+
+    font-weight: 600;
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--accent-hover);
+}
+
+.btn-secondary {
+    background: white;
+    border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+    background: #f8fafc;
+}
+
+/* ==========================
+   CARDS
+   ========================== */
+
+.card {
+    background: var(--surface);
+
+    padding: 2rem;
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow-md);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 40px rgba(15, 23, 42, 0.12);
+}
+
+/* ==========================
+   GRID
+   ========================== */
+
+.grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.grid-2 {
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+}
+
+.grid-3 {
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+}
+
+/* ==========================
+   FEATURE ITEMS
+   ========================== */
+
+.feature-icon {
+    width: 50px;
+    height: 50px;
+
+    background: rgba(99, 102, 241, 0.1);
+
+    color: var(--accent);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    margin-bottom: 1rem;
+}
+
+.feature-title {
+    margin-bottom: 0.5rem;
+}
+
+/* ==========================
+   FORMS
+   ========================== */
+
+input,
+textarea {
+    width: 100%;
+
+    padding: 1rem;
+
+    border-radius: 12px;
+    border: 1px solid var(--border);
+
+    background: white;
+
+    font: inherit;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+
+    border-color: var(--accent);
+
+    box-shadow:
+        0 0 0 4px rgba(99, 102, 241, 0.12);
+}
+
+/* ==========================
+   FOOTER
+   ========================== */
+
+footer {
+    padding: 4rem 0;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--text-muted);
+}
+
+/* ==========================
+   UTILITIES
+   ========================== */
+
+.text-center {
+    text-align: center;
+}
+
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.mt-3 { margin-top: 3rem; }
+
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+.mb-3 { margin-bottom: 3rem; }
+
+/* ==========================
+   RESPONSIVE
+   ========================== */
+
+@media (max-width: 900px) {
+
+    .grid-2,
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 5rem 0;
+    }
+
+    .section {
+        padding: 4rem 0;
+    }
 }
